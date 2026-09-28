@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { X, ExternalLink, Download, FileText, Award, ShieldCheck } from "lucide-react";
+import { X, ExternalLink, Download, FileText } from "lucide-react";
 import { CertificationItem } from "@/types/portfolio";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";

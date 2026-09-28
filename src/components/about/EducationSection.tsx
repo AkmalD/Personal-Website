@@ -2,12 +2,10 @@ import React from "react";
 import {
   GraduationCap,
   Award,
-  BookOpen,
   CheckCircle2,
   Binary,
   Database,
   Network,
-  Cpu,
   Layers,
   FileCheck,
 } from "lucide-react";

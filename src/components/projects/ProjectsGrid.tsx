@@ -5,11 +5,7 @@ import Image from "next/image";
 import {
   Layers,
   ExternalLink,
-  Code2,
   Search,
-  Sparkles,
-  ArrowUpRight,
-  ShieldCheck,
   Zap,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -18,7 +14,7 @@ import { Button } from "@/components/ui/Button";
 import { GithubIcon } from "@/components/ui/Icons";
 import { ArchitectureModal } from "@/components/modals/ArchitectureModal";
 import { projectsData } from "@/data/projects";
-import { Project, ProjectCategory } from "@/types/portfolio";
+import { Project } from "@/types/portfolio";
 
 export function ProjectsGrid() {
   const [activeFilter, setActiveFilter] = useState<string>("all");

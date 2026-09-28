@@ -1,14 +1,8 @@
 import React from "react";
 import {
-  Briefcase,
   Calendar,
   MapPin,
   ChevronRight,
-  ShieldCheck,
-  CheckCircle,
-  Users,
-  Building2,
-  Code,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
@@ -50,7 +44,7 @@ export function ExperienceTimeline() {
 
         {/* Experience List */}
         <div className="space-y-6">
-          {experienceData.map((exp, index) => (
+          {experienceData.map((exp) => (
             <div
               key={exp.id}
               className="p-6 md:p-8 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:border-primary/25 transition-all duration-300 flex flex-col gap-6"

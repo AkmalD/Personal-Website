@@ -14,7 +14,6 @@ import {
   GitBranch,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
 import { ArchitectureModal } from "@/components/modals/ArchitectureModal";
 import { profileData } from "@/data/profile";
 import { projectsData } from "@/data/projects";

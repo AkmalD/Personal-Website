@@ -1,20 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   X,
   ExternalLink,
-  Code2,
   Layers,
   CheckCircle2,
-  Zap,
   ArrowRight,
-  Database,
-  Server,
-  Network,
-  Cpu,
-  FileCheck,
-  ShieldCheck,
 } from "lucide-react";
 import { Project } from "@/types/portfolio";
 import { Badge } from "@/components/ui/Badge";

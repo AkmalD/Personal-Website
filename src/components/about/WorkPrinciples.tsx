@@ -1,5 +1,5 @@
 import React from "react";
-import { Compass, MessageSquareCode, ShieldCheck, HeartHandshake } from "lucide-react";
+import { Compass, MessageSquareCode, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 export function WorkPrinciples() {

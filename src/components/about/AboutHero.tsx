@@ -2,18 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Mail,
   Download,
-  ExternalLink,
   MapPin,
-  GraduationCap,
-  Sparkles,
-  ArrowUpRight,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { useContactModal } from "@/components/modals/ContactModalContext";

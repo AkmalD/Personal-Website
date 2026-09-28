@@ -1,17 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import {
   Award,
   ShieldCheck,
   FileCheck,
   ExternalLink,
   Eye,
-  FileText,
-  Sparkles,
-  CheckCircle2,
-  Calendar,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";

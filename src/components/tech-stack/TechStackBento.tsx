@@ -7,15 +7,13 @@ import {
   Layout,
   Cpu,
   Compass,
-  CheckCircle2,
-  Sparkles,
   Search,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { TechIcon } from "./TechIcon";
 import { techStackData } from "@/data/tech-stack";
-import { SkillCategory, SkillCategoryType } from "@/types/portfolio";
+import { SkillCategoryType } from "@/types/portfolio";
 
 export function TechStackBento() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
