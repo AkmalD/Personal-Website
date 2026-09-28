@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-plus-jakarta-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-plus-jakarta-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Surfaces & Canvas */
+  --color-surface: #f8f9ff;
+  --color-surface-dim: #cbdbf5;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container: #e5eeff;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container-highest: #d3e4fe;
+  --color-on-surface: #0b1c30;
+  --color-on-surface-variant: #44474c;
+  --color-inverse-surface: #213145;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-outline: #75777d;
+  --color-outline-variant: #c5c6cd;
+  --color-surface-tint: #515f74;
+
+  /* Primary Brand */
+  --color-primary: #1d2b3e;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #334155;
+  --color-on-primary-container: #9eadc5;
+  --color-inverse-primary: #b9c7e0;
+  --color-primary-fixed: #d5e3fd;
+  --color-primary-fixed-dim: #b9c7e0;
+  --color-on-primary-fixed: #0d1c2f;
+  --color-on-primary-fixed-variant: #3a485c;
+
+  /* Secondary */
+  --color-secondary: #515f74;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #d5e3fc;
+  --color-on-secondary-container: #57657a;
+  --color-secondary-fixed: #d5e3fc;
+  --color-secondary-fixed-dim: #b9c7df;
+  --color-on-secondary-fixed: #0d1c2e;
+  --color-on-secondary-fixed-variant: #3a485b;
+
+  /* Tertiary */
+  --color-tertiary: #1b2b3f;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #314156;
+  --color-on-tertiary-container: #9dadc6;
+  --color-tertiary-fixed: #d3e4fe;
+  --color-tertiary-fixed-dim: #b7c8e1;
+  --color-on-tertiary-fixed: #0b1c30;
+  --color-on-tertiary-fixed-variant: #38485d;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Accent & Borders */
+  --color-accent-sage: #627264;
+  --color-accent-taupe: #8c827a;
+  --color-border-delicate: #e2e8f0;
+  --color-border-interactive: #cbd5e1;
+
+  /* Spacing */
+  --spacing-gutter: 1.5rem;
+  --spacing-margin: 1.5rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-level-1: 0 1px 3px 0 rgba(71, 85, 105, 0.04), 0 1px 2px -1px rgba(71, 85, 105, 0.03);
+  --shadow-level-2: 0 10px 25px -5px rgba(71, 85, 105, 0.06), 0 8px 10px -6px rgba(71, 85, 105, 0.04);
+}
+
+/* Typography Utility Classes matching DESIGN.md */
+@utility text-display {
+  font-size: 3.5rem;
+  line-height: 4.25rem;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+@utility text-display-mobile {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+@utility text-headline-lg {
+  font-size: 2.25rem;
+  line-height: 2.875rem;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+@utility text-headline-md {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+@utility text-headline-sm {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+@utility text-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+
+@utility text-body-md {
+  font-size: 1rem;
+  line-height: 1.65rem;
+  letter-spacing: 0em;
+  font-weight: 400;
+}
+
+@utility text-body-sm {
+  font-size: 0.875rem;
+  line-height: 1.45rem;
+  letter-spacing: 0.005em;
+  font-weight: 400;
+}
+
+@utility text-label-md {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+@utility text-label-sm {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+/* Base resets & layout */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #0b1c30;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: #d5e3fc;
+  color: #0b1c30;
+}
