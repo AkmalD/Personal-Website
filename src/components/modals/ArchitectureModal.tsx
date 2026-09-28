@@ -1,12 +1,17 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   X,
   ExternalLink,
   Layers,
   CheckCircle2,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Maximize2,
+  ImageIcon,
 } from "lucide-react";
 import { Project } from "@/types/portfolio";
 import { Button } from "@/components/ui/Button";
@@ -23,9 +28,26 @@ export function ArchitectureModal({
   isOpen,
   onClose,
 }: ArchitectureModalProps) {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const [prevProjectId, setPrevProjectId] = useState(project?.id);
+
+  if (project?.id !== prevProjectId) {
+    setPrevProjectId(project?.id);
+    setActiveImageIndex(0);
+    setLightboxOpen(false);
+  }
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        if (lightboxOpen) {
+          setLightboxOpen(false);
+        } else {
+          onClose();
+        }
+      }
     };
 
     if (isOpen) {
@@ -39,11 +61,17 @@ export function ArchitectureModal({
       window.document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, lightboxOpen, onClose]);
 
   if (!isOpen || !project) return null;
 
   const arch = project.architecture;
+  const images =
+    project.images && project.images.length > 0
+      ? project.images
+      : project.coverImage
+      ? [project.coverImage]
+      : [];
 
   return (
     <div
@@ -97,6 +125,98 @@ export function ArchitectureModal({
 
         {/* Scrollable Content Body */}
         <div className="p-5 sm:p-6 overflow-y-auto space-y-6 text-body-sm">
+          {/* Image Gallery Carousel Section */}
+          {images.length > 0 && (
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold flex items-center gap-1.5">
+                  <ImageIcon className="w-3.5 h-3.5 text-primary" />
+                  <span>Galeri Dokumentasi &amp; Antarmuka</span>
+                </span>
+                <span className="font-mono text-[11px] text-secondary bg-surface-container-low px-2 py-0.5 rounded border border-border-delicate">
+                  {activeImageIndex + 1} / {images.length}
+                </span>
+              </div>
+
+              {/* Main Carousel Display Frame */}
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950/5 border border-border-delicate group">
+                <div
+                  className="relative w-full h-full cursor-zoom-in"
+                  onClick={() => setLightboxOpen(true)}
+                  title="Klik untuk memperbesar gambar"
+                >
+                  <Image
+                    src={images[activeImageIndex]}
+                    alt={`${project.title} - Screenshot ${activeImageIndex + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 720px"
+                    className="object-contain"
+                  />
+
+                  {/* Hover Prompt to Zoom */}
+                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 text-white text-xs backdrop-blur-md shadow-sm pointer-events-none">
+                    <Maximize2 className="w-3.5 h-3.5" />
+                    <span>Klik untuk perbesar</span>
+                  </div>
+                </div>
+
+                {/* Left/Right Navigation Arrows */}
+                {images.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+                      }}
+                      className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/70 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur-sm transition-all shadow-md cursor-pointer opacity-80 hover:opacity-100"
+                      aria-label="Gambar sebelumnya"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+                      }}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/70 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur-sm transition-all shadow-md cursor-pointer opacity-80 hover:opacity-100"
+                      aria-label="Gambar berikutnya"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </>
+                )}
+              </div>
+
+              {/* Thumbnails Strip */}
+              {images.length > 1 && (
+                <div className="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar">
+                  {images.map((img, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setActiveImageIndex(idx)}
+                      className={`relative w-16 sm:w-20 aspect-video rounded-lg overflow-hidden border shrink-0 transition-all cursor-pointer ${
+                        idx === activeImageIndex
+                          ? "border-primary ring-2 ring-primary/30 opacity-100"
+                          : "border-border-delicate opacity-60 hover:opacity-100"
+                      }`}
+                    >
+                      <Image
+                        src={img}
+                        alt={`Thumbnail ${idx + 1}`}
+                        fill
+                        sizes="80px"
+                        className="object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
           {/* 1. Overview Box */}
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-primary font-semibold font-label-md">
@@ -276,6 +396,77 @@ export function ArchitectureModal({
           </Button>
         </div>
       </div>
+
+      {/* Fullscreen Lightbox Modal */}
+      {lightboxOpen && images.length > 0 && (
+        <div
+          className="fixed inset-0 z-[70] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 animate-in fade-in duration-200"
+          onClick={() => setLightboxOpen(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          {/* Top Bar with counter & close */}
+          <div
+            className="absolute top-4 left-4 right-4 flex items-center justify-between z-10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span className="font-mono text-sm text-white/90 bg-white/10 px-3 py-1 rounded-full backdrop-blur-md border border-white/15">
+              {activeImageIndex + 1} / {images.length}
+            </span>
+            <button
+              type="button"
+              onClick={() => setLightboxOpen(false)}
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Tutup preview penuh"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Fullscreen Image Container */}
+          <div
+            className="relative w-full max-w-5xl h-[82vh] flex items-center justify-center cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={images[activeImageIndex]}
+              alt={`${project.title} - Fullscreen Preview`}
+              fill
+              sizes="100vw"
+              className="object-contain"
+              priority
+            />
+          </div>
+
+          {/* Lightbox Navigation */}
+          {images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center backdrop-blur-md transition-colors cursor-pointer"
+                aria-label="Gambar sebelumnya"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center backdrop-blur-md transition-colors cursor-pointer"
+                aria-label="Gambar berikutnya"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }

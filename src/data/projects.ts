@@ -172,6 +172,9 @@ export const projectsData: Project[] = [
       "/assets/projects/lawanpmo/lawanpmo-2.jpeg",
       "/assets/projects/lawanpmo/lawanpmo-3.jpeg",
       "/assets/projects/lawanpmo/lawanpmo-4.jpeg",
+      "/assets/projects/lawanpmo/lawanpmo-5.jpeg",
+      "/assets/projects/lawanpmo/lawanpmo-6.jpeg",
+      "/assets/projects/lawanpmo/lawanpmo-7.jpeg",
     ],
     architecture: {
       overview:
