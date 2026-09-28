@@ -3,7 +3,7 @@ import { ProfileBio } from "@/types/portfolio";
 export const profileData: ProfileBio = {
   fullName: "Akmal Goniyyu Hartono",
   aliasName: "Akmal",
-  roleTitle: "Backend & Fullstack Software Engineer",
+  roleTitle: "Backend & Fullstack Web Engineer",
   statusBadge: "Open to Full-Time Software Roles",
   location: "Bandung, Indonesia (Remote / Hybrid)",
   gpa: "3.47",
@@ -12,17 +12,18 @@ export const profileData: ProfileBio = {
   bgImageUrl: "/assets/profile/pimnas-bg.jpeg",
   resumeUrl: "/assets/documents/cv.pdf",
   narrativeParagraphs: [
-    "Halo! Saya Akmal Goniyyu Hartono, lulusan Sarjana Terapan (D4) Teknik Informatika Politeknik Negeri Bandung (POLBAN) yang berfokus mendalam pada Backend Development, Arsitektur Microservices, dan Sistem Terdistribusi.",
-    "Bagi saya, rekayasa perangkat lunak bukan sekadar merangkai baris kode agar berfungsi, melainkan memastikan reliabilitas sistem ketika lonjakan transaksi terjadi, menjaga modularitas arsitektur agar kolaborasi tim berjalan mulus, serta menciptakan nilai nyata bagi manusia yang menggunakannya.",
-    "Saya memiliki pengalaman memimpin pengembangan sistem administrasi sekolah (PkM SMKN 1 Cisarua), membangun ulang sistem E-Visitor di PT Pindad (Persero), hingga mengembangkan aplikasi riset terapan terdaftar HKI (LawanPMO & Dasawisma Sariwangi) dengan perolehan medali perak dan perunggu PIMNAS tingkat nasional."
+    "Halo! Saya Akmal Goniyyu Hartono, lulusan Sarjana Terapan (D4) Teknik Informatika Politeknik Negeri Bandung (POLBAN) yang berfokus pada Backend & Fullstack Engineering, khususnya dalam pengembangan aplikasi web modern (modern web development), arsitektur microservices, dan sistem terdistribusi.",
+    "Bagi saya, rekayasa perangkat lunak dan pengembangan web bukan sekadar merangkai baris kode agar berfungsi, melainkan memastikan reliabilitas sistem ketika lonjakan transaksi terjadi, menjaga modularitas arsitektur agar kolaborasi tim berjalan mulus, serta menghadirkan antarmuka web yang intuitif, responsif, dan bernilai nyata bagi penggunanya.",
+    "Saya memiliki pengalaman memimpin pengembangan sistem web administrasi sekolah (PkM SMKN 1 Cisarua), membangun ulang sistem enterprise E-Visitor di PT Pindad (Persero), hingga mengembangkan aplikasi riset terapan terdaftar HKI (LawanPMO & Dasawisma Sariwangi) dengan perolehan medali perak dan perunggu PIMNAS tingkat nasional."
   ],
   coreAttributes: [
+    "Fullstack Web Development",
     "Microservices & Spring Boot",
     "High Concurrency & ACID RDBMS",
     "REST & Event-Driven APIs",
     "Clean Architecture & DTOs",
-    "Reliability Engineering",
-    "Fullstack Integration"
+    "Modern Web Frameworks (Next.js/React)",
+    "Reliability Engineering"
   ],
   socialLinks: {
     github: "https://github.com/AkmalD",

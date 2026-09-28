@@ -33,10 +33,10 @@ export function AboutCta() {
               variant="primary"
               size="lg"
               onClick={openContactModal}
-              className="group"
+              className="group text-white"
             >
-              <span>Hubungi Saya</span>
-              <Mail className="w-4 h-4 ml-1 group-hover:scale-110 transition-transform" />
+              <span className="text-white">Hubungi Saya</span>
+              <Mail className="w-4 h-4 ml-1 text-white group-hover:scale-110 transition-transform" />
             </Button>
 
             <a

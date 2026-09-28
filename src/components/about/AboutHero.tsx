@@ -67,10 +67,10 @@ export function AboutHero() {
                 variant="primary"
                 size="md"
                 onClick={openContactModal}
-                className="group"
+                className="group text-white"
               >
-                <span>Hubungi Langsung</span>
-                <Mail className="w-4 h-4 ml-1 group-hover:scale-110 transition-transform" />
+                <span className="text-white">Hubungi Langsung</span>
+                <Mail className="w-4 h-4 ml-1 text-white group-hover:scale-110 transition-transform" />
               </Button>
               <a
                 href={profileData.resumeUrl}
@@ -89,16 +89,16 @@ export function AboutHero() {
           {/* Right Column: Bio Card & Quick Facts (5 Cols) */}
           <div className="lg:col-span-5 bg-surface-container-lowest rounded-2xl border border-border-delicate shadow-level-1 p-6 flex flex-col gap-6">
             {/* Avatar & Floating Status Badge */}
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container border border-border-delicate">
+            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container border border-border-delicate">
               <Image
                 src={profileData.avatarUrl}
                 alt={profileData.fullName}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 400px"
-                className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                className="object-cover object-[center_30%] hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md flex items-center gap-2 shadow-level-1 border border-border-delicate">
+              <div className="absolute bottom-3.5 left-3.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md flex items-center gap-2 shadow-level-1 border border-border-delicate">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="font-label-sm text-label-sm text-primary font-semibold">
                   Siap Kerja Penuh Waktu
