@@ -9,7 +9,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Project } from "@/types/portfolio";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { GithubIcon } from "@/components/ui/Icons";
 
@@ -60,14 +59,7 @@ export function ArchitectureModal({
       >
         {/* Header */}
         <div className="p-5 sm:p-6 border-b border-border-delicate flex items-start justify-between bg-surface-container-low/60 shrink-0">
-          <div className="space-y-1.5 pr-4">
-            <div className="flex items-center gap-2 flex-wrap">
-              <Badge variant="primary">{project.categoryLabel}</Badge>
-              {project.badge && <Badge variant="sage">{project.badge}</Badge>}
-              <span className="font-mono text-label-sm text-secondary font-medium">
-                {project.year}
-              </span>
-            </div>
+          <div className="space-y-2 pr-4">
             <h2
               id="architecture-modal-title"
               className="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug"
@@ -77,6 +69,20 @@ export function ArchitectureModal({
             <p className="font-body-sm text-body-sm text-secondary">
               Peran: <span className="font-medium text-primary">{project.role}</span>
             </p>
+            {/* Badges kecil di bawah peran */}
+            <div className="flex items-center gap-1.5 flex-wrap pt-0.5">
+              <span className="px-2 py-0.5 rounded-md bg-surface-container text-primary text-[11px] font-semibold border border-border-delicate">
+                {project.categoryLabel}
+              </span>
+              {project.badge && (
+                <span className="px-2 py-0.5 rounded-md bg-surface-container text-accent-sage text-[11px] font-semibold border border-border-delicate">
+                  {project.badge}
+                </span>
+              )}
+              <span className="font-mono text-[11px] text-secondary bg-surface-container-low px-2 py-0.5 rounded border border-border-delicate">
+                {project.year}
+              </span>
+            </div>
           </div>
 
           <button
@@ -255,10 +261,13 @@ export function ArchitectureModal({
                 rel="noopener noreferrer"
                 className="inline-flex"
               >
-                <Button variant="primary" size="sm">
-                  <span>Buka Live Demo</span>
-                  <ExternalLink className="w-3.5 h-3.5 ml-1" />
-                </Button>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 min-h-[36px] rounded-lg text-label-sm font-semibold bg-primary text-white hover:bg-primary-container shadow-xs transition-colors cursor-pointer"
+                >
+                  <span className="text-white">Buka Live Demo</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-white ml-1" />
+                </button>
               </a>
             )}
           </div>

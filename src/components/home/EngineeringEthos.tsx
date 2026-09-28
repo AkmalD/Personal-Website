@@ -156,13 +156,30 @@ export function EngineeringEthos() {
 
                 </div>
 
-                {/* Body Content: Judul & Click Indicator */}
-                <div className="p-5 flex items-center justify-between gap-3">
-                  <h3 className="font-headline-sm text-[1.125rem] font-semibold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
-                    {project.title}
-                  </h3>
-                  <div className="w-8 h-8 rounded-full bg-surface-container-low group-hover:bg-primary group-hover:text-white text-secondary flex items-center justify-center shrink-0 transition-colors shadow-2xs">
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                {/* Body Content: Judul, Peran & Badges kecil di bawah peran */}
+                <div className="p-5 space-y-2">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-headline-sm text-[1.125rem] font-semibold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                      {project.title}
+                    </h3>
+                    <div className="w-8 h-8 rounded-full bg-surface-container-low group-hover:bg-primary group-hover:text-white text-secondary flex items-center justify-center shrink-0 transition-colors shadow-2xs mt-0.5">
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    </div>
+                  </div>
+
+                  <p className="text-[12px] text-secondary">
+                    Peran: <span className="font-medium text-primary">{project.role}</span>
+                  </p>
+
+                  <div className="flex items-center gap-1.5 flex-wrap pt-0.5">
+                    <span className="px-2 py-0.5 rounded-md bg-surface-container text-secondary text-[11px] font-medium">
+                      {project.categoryLabel}
+                    </span>
+                    {project.badge && (
+                      <span className="px-2 py-0.5 rounded-md bg-surface-container-low text-accent-sage text-[11px] font-medium border border-border-delicate/60">
+                        {project.badge}
+                      </span>
+                    )}
                   </div>
                 </div>
               </article>
