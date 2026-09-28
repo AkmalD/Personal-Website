@@ -68,7 +68,7 @@ export function EngineeringEthos() {
             {profileData.ethosPillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between space-y-6"
+                className="p-6 sm:p-8 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between space-y-6"
               >
                 <div className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center">
                   {getPillarIcon(pillar.iconName)}
@@ -204,7 +204,7 @@ export function EngineeringEthos() {
                   <button
                     type="button"
                     onClick={() => handleOpenArchitecture(project)}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-label-sm font-medium bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-xs cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[38px] rounded-lg text-label-sm font-medium bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-xs cursor-pointer"
                   >
                     <Layers className="w-3.5 h-3.5" />
                     <span>View Architecture</span>
@@ -216,7 +216,7 @@ export function EngineeringEthos() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
+                        className="p-2 min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
                         title="Live Demo"
                       >
                         <ExternalLink className="w-4 h-4" />
@@ -227,7 +227,7 @@ export function EngineeringEthos() {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
+                        className="p-2 min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
                         title="GitHub Repository"
                       >
                         <GitBranch className="w-4 h-4" />

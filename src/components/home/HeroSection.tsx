@@ -63,12 +63,12 @@ export function HeroSection() {
             </div>
 
             {/* Trust Markers */}
-            <div className="grid grid-cols-3 gap-6 pt-6 w-full max-w-md border-t border-border-delicate/80">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 w-full max-w-md border-t border-border-delicate/80">
               <div className="flex flex-col">
                 <span className="font-headline-sm text-headline-sm text-primary font-semibold">
                   {profileData.projectsCompleted}+
                 </span>
-                <span className="font-label-sm text-label-sm text-secondary">
+                <span className="text-[11px] sm:text-label-sm text-secondary">
                   Projects Completed
                 </span>
               </div>
@@ -76,7 +76,7 @@ export function HeroSection() {
                 <span className="font-headline-sm text-headline-sm text-primary font-semibold">
                   {profileData.gpa}
                 </span>
-                <span className="font-label-sm text-label-sm text-secondary">
+                <span className="text-[11px] sm:text-label-sm text-secondary">
                   Cumulative GPA
                 </span>
               </div>
@@ -84,7 +84,7 @@ export function HeroSection() {
                 <span className="font-headline-sm text-headline-sm text-primary font-semibold">
                   2 HKI
                 </span>
-                <span className="font-label-sm text-label-sm text-secondary">
+                <span className="text-[11px] sm:text-label-sm text-secondary">
                   Hak Cipta Nasional
                 </span>
               </div>

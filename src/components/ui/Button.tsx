@@ -24,9 +24,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const sizeStyles = {
-      sm: "text-label-sm px-3 py-1.5 rounded-lg gap-1.5",
-      md: "text-label-md px-4 py-2.5 rounded-lg gap-2",
-      lg: "text-body-md px-6 py-3.5 rounded-xl gap-2.5",
+      sm: "text-label-sm px-3 py-1.5 min-h-[36px] rounded-lg gap-1.5",
+      md: "text-label-md px-4 py-2.5 min-h-[42px] rounded-lg gap-2",
+      lg: "text-body-md px-6 py-3.5 min-h-[48px] rounded-xl gap-2.5",
     };
 
     return (

@@ -119,7 +119,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors"
+            className="md:hidden w-11 h-11 flex items-center justify-center rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors cursor-pointer"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -144,7 +144,7 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-3 py-2.5 rounded-lg text-body-sm transition-colors flex items-center justify-between",
+                    "px-3.5 py-3 min-h-[44px] rounded-lg text-body-sm transition-colors flex items-center justify-between",
                     isActive
                       ? "bg-surface-container text-primary font-semibold"
                       : "text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-medium"
@@ -164,7 +164,7 @@ export function Navbar() {
                 setMobileMenuOpen(false);
                 openContactModal();
               }}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-body-sm font-medium bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 min-h-[44px] rounded-lg text-body-sm font-medium bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm cursor-pointer"
             >
               <span>Get in Touch</span>
               <ArrowUpRight className="w-4 h-4" />

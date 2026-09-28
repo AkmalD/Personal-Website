@@ -24,14 +24,14 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     };
 
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      window.document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
     } else {
-      document.body.style.overflow = "";
+      window.document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = "";
+      window.document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, onClose]);
