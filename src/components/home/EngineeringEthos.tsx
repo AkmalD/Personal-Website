@@ -154,16 +154,6 @@ export function EngineeringEthos() {
                     </div>
                   )}
 
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                    <span className="px-2.5 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-md text-[11px] font-semibold text-primary shadow-xs border border-border-delicate/60">
-                      {project.categoryLabel}
-                    </span>
-                    {project.badge && (
-                      <span className="px-2.5 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-md text-[11px] font-semibold text-accent-sage shadow-xs border border-border-delicate/60">
-                        {project.badge}
-                      </span>
-                    )}
-                  </div>
                 </div>
 
                 {/* Body Content: Judul & Click Indicator */}

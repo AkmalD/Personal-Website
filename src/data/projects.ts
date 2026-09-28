@@ -165,8 +165,9 @@ export const projectsData: Project[] = [
       "Cloudflare CDN",
     ],
     liveUrl: "https://lawanpmo.id/",
-    coverImage: "/assets/projects/lawanpmo/lawanpmo-1.jpeg",
+    coverImage: "/assets/projects/lawanpmo/lawanpmo-cover.png",
     images: [
+      "/assets/projects/lawanpmo/lawanpmo-cover.png",
       "/assets/projects/lawanpmo/lawanpmo-1.jpeg",
       "/assets/projects/lawanpmo/lawanpmo-2.jpeg",
       "/assets/projects/lawanpmo/lawanpmo-3.jpeg",
