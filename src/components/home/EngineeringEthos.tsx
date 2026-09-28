@@ -98,7 +98,7 @@ export function EngineeringEthos() {
               {/* Medal 1: Perak */}
               <div
                 onClick={() => handleOpenDocById("award-pimnas-perak")}
-                className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:border-border-interactive transition-all space-y-2.5 cursor-pointer group"
+                className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:border-border-interactive transition-all space-y-3 cursor-pointer group"
                 title="Klik untuk melihat sertifikat resmi Medali Perak"
               >
                 <div className="flex items-center justify-between">
@@ -110,9 +110,8 @@ export function EngineeringEthos() {
                       Medali Perak (Juara 2)
                     </span>
                   </div>
-                  <div className="flex items-center gap-1.5 font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded group-hover:text-primary transition-colors">
+                  <div className="flex items-center gap-1.5 font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
                     <span>Poster PKM-KI</span>
-                    <Eye className="w-3 h-3 opacity-60 group-hover:opacity-100" />
                   </div>
                 </div>
                 <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
@@ -121,12 +120,28 @@ export function EngineeringEthos() {
                 <p className="font-body-sm text-body-sm text-secondary leading-relaxed">
                   Dianugerahi oleh dewan juri nasional atas keunggulan poster ilmiah yang menyajikan solusi secara lengkap dan tuntas—menjelaskan secara utuh analisis urgensi masalah, perancangan arsitektur sistem, formulasi metode preventif-interventif, hingga efektivitas solusi yang ditawarkan.
                 </p>
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-border-delicate/60">
+                  <span className="font-mono text-[11px] text-secondary">
+                    PIMNAS 36 Kemendikbudristek
+                  </span>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleOpenDocById("award-pimnas-perak");
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-white hover:bg-primary-container transition-colors shadow-xs shrink-0 cursor-pointer self-start sm:self-auto"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-white" />
+                    <span className="text-white">Lihat Sertifikat</span>
+                  </button>
+                </div>
               </div>
 
               {/* Medal 2: Perunggu */}
               <div
                 onClick={() => handleOpenDocById("award-pimnas-perunggu")}
-                className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:border-border-interactive transition-all space-y-2.5 cursor-pointer group"
+                className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:border-border-interactive transition-all space-y-3 cursor-pointer group"
                 title="Klik untuk melihat sertifikat resmi Medali Perunggu"
               >
                 <div className="flex items-center justify-between">
@@ -138,9 +153,8 @@ export function EngineeringEthos() {
                       Medali Perunggu (Juara 3)
                     </span>
                   </div>
-                  <div className="flex items-center gap-1.5 font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded group-hover:text-primary transition-colors">
+                  <div className="flex items-center gap-1.5 font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
                     <span>Presentasi PKM-KI</span>
-                    <Eye className="w-3 h-3 opacity-60 group-hover:opacity-100" />
                   </div>
                 </div>
                 <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
@@ -149,6 +163,22 @@ export function EngineeringEthos() {
                 <p className="font-body-sm text-body-sm text-secondary leading-relaxed">
                   Dianugerahi atas pembuktian teknis yang solid, kesiapan implementasi kode produksi, dan demonstrasi keandalan sistem di hadapan dewan penilai ahli nasional.
                 </p>
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-border-delicate/60">
+                  <span className="font-mono text-[11px] text-secondary">
+                    PIMNAS 36 Kemendikbudristek
+                  </span>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleOpenDocById("award-pimnas-perunggu");
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-white hover:bg-primary-container transition-colors shadow-xs shrink-0 cursor-pointer self-start sm:self-auto"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-white" />
+                    <span className="text-white">Lihat Sertifikat</span>
+                  </button>
+                </div>
               </div>
 
               {/* HKI & Direct Modal Trigger */}

@@ -124,46 +124,11 @@ export function DocumentModal({
         {/* Document Content Viewport */}
         <div className="flex-1 w-full bg-surface-container-lowest overflow-auto p-2 sm:p-4 flex items-center justify-center relative">
           {fileUrl && isPdf ? (
-            <object
-              data={`${fileUrl}#view=FitH`}
-              type="application/pdf"
+            <iframe
+              src={fileUrl}
+              title={item.title}
               className="w-full h-full rounded-xl border border-border-delicate bg-white shadow-xs"
-            >
-              <iframe
-                src={`${fileUrl}#view=FitH`}
-                title={item.title}
-                className="w-full h-full border-0 rounded-xl"
-              >
-                <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center space-y-4 bg-surface-container-low/30 rounded-xl">
-                  <FileText className="w-12 h-12 text-secondary mx-auto" />
-                  <div className="space-y-1 max-w-md">
-                    <p className="font-headline-sm text-on-surface font-semibold">Pratinjau PDF</p>
-                    <p className="font-body-sm text-secondary">
-                      Browser Anda tidak dapat merender pratinjau PDF langsung di dalam bingkai ini. Anda dapat membuka atau mengunduh dokumen secara langsung:
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 pt-2">
-                    <a
-                      href={fileUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex"
-                    >
-                      <Button variant="primary" size="md">
-                        <span>Buka di Tab Baru</span>
-                        <ExternalLink className="w-4 h-4 ml-1.5" />
-                      </Button>
-                    </a>
-                    <a href={fileUrl} download className="inline-flex">
-                      <Button variant="secondary" size="md">
-                        <span>Unduh PDF</span>
-                        <Download className="w-4 h-4 ml-1.5 text-secondary" />
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-              </iframe>
-            </object>
+            />
           ) : fileUrl && isImage ? (
             <div className="relative w-full h-full min-h-[400px] flex items-center justify-center bg-surface-container-low/30 rounded-xl p-2 sm:p-4 overflow-auto">
               <Image
