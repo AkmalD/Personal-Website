@@ -39,11 +39,13 @@ export function DocumentModal({
   if (!isOpen || !item) return null;
 
   const fileUrl = item.fileUrl || "";
-  const isPdf = fileUrl.toLowerCase().endsWith(".pdf");
+  const cleanPath = fileUrl.split("?")[0].toLowerCase();
+  const isPdf = cleanPath.endsWith(".pdf");
   const isImage =
-    fileUrl.toLowerCase().endsWith(".jpeg") ||
-    fileUrl.toLowerCase().endsWith(".jpg") ||
-    fileUrl.toLowerCase().endsWith(".png");
+    cleanPath.endsWith(".jpeg") ||
+    cleanPath.endsWith(".jpg") ||
+    cleanPath.endsWith(".png") ||
+    cleanPath.endsWith(".webp");
 
   const getTypeBadge = (type: CertificationItem["type"]) => {
     switch (type) {

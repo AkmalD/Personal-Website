@@ -125,7 +125,7 @@ export const certificationsData: CertificationItem[] = [
     issuer: "Pekan Ilmiah Mahasiswa Nasional (PIMNAS)",
     date: "2025",
     type: "award",
-    fileUrl: "/assets/certificates/sertifikat-penghargaan-perak-poster.pdf",
+    fileUrl: "/assets/certificates/sertifikat-penghargaan-perak-poster.pdf?v=2",
     description:
       "Penghargaan kompetisi ilmiah bergengsi tingkat nasional atas riset dan inovasi rekayasa perangkat lunak platform kesehatan digital.",
   },
@@ -135,7 +135,7 @@ export const certificationsData: CertificationItem[] = [
     issuer: "Pekan Ilmiah Mahasiswa Nasional (PIMNAS)",
     date: "2025",
     type: "award",
-    fileUrl: "/assets/certificates/sertifikat-penghargaan-perunggu-presentasi.pdf",
+    fileUrl: "/assets/certificates/sertifikat-penghargaan-perunggu-presentasi.pdf?v=2",
     description:
       "Penghargaan presentasi teknis dan demonstrasi efektivitas produk rekayasa perangkat lunak di hadapan dewan juri nasional.",
   },
@@ -167,7 +167,7 @@ export const certificationsData: CertificationItem[] = [
     date: "23 Oktober 2024",
     type: "award",
     registrationNumber: "B/508/PL1.R7/PG.00.09/2024",
-    fileUrl: "/assets/certificates/sertifikat-icast.pdf",
+    fileUrl: "/assets/certificates/sertifikat-icast.pdf?v=2",
     description:
       "Apresiasi panitia teknis pada konferensi internasional sains terapan dan rekayasa teknologi informasi ke-7.",
   },
