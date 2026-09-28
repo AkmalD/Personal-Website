@@ -4,9 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Network,
-  Code2,
-  Cpu,
+  Trophy,
+  ShieldCheck,
   ArrowRight,
   Layers,
   Sparkles,
@@ -28,68 +27,129 @@ export function EngineeringEthos() {
     setIsModalOpen(true);
   };
 
-  const getPillarIcon = (name: string) => {
-    switch (name) {
-      case "Network":
-        return <Network className="w-6 h-6 text-primary" />;
-      case "Code2":
-        return <Code2 className="w-6 h-6 text-primary" />;
-      default:
-        return <Cpu className="w-6 h-6 text-primary" />;
-    }
-  };
-
   return (
     <div className="w-full space-y-20 lg:space-y-28 py-12">
-      {/* SECTION 1: ENGINEERING ETHOS (BENTO PILLARS) */}
-      <section className="w-full bg-surface-container-low py-16 lg:py-24">
+      {/* SECTION 1: PIMNAS NATIONAL ACHIEVEMENT SPOTLIGHT */}
+      <section className="w-full bg-surface-container-low py-16 lg:py-24 border-b border-border-delicate">
         <Container>
-          {/* Header */}
+          {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div className="max-w-xl">
-              <span className="font-label-sm text-label-sm text-secondary tracking-widest uppercase font-semibold">
-                Engineering Ethos
-              </span>
-              <h2 className="font-headline-lg text-headline-lg text-on-surface mt-1.5 tracking-tight">
-                Methodical craft behind the scenes.
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold border border-border-delicate mb-3">
+                <Trophy className="w-3.5 h-3.5 text-amber-500" />
+                <span>Pencapaian Prestasi Nasional</span>
+              </div>
+              <h2 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+                Dual Medalist PIMNAS: Riset &amp; Rekayasa Terapan
               </h2>
             </div>
-            <p className="font-body-md text-body-md text-secondary max-w-sm leading-relaxed">
-              Software is built for humans. I balance deep database tuning and concurrent
-              microservice architectures with deliberate, quiet digital experiences.
+            <p className="font-body-md text-body-md text-secondary max-w-md leading-relaxed">
+              Pekan Ilmiah Mahasiswa Nasional (PIMNAS) adalah ajang kompetisi penalaran ilmiah dan inovasi sains-teknologi perguruan tinggi paling bergengsi di Indonesia yang diselenggarakan oleh Puspresnas / Kemendikbudristek.
             </p>
           </div>
 
-          {/* Bento Grid 3 Core Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {profileData.ethosPillars.map((pillar, idx) => (
-              <div
-                key={idx}
-                className="p-6 sm:p-8 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between space-y-6"
-              >
-                <div className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center">
-                  {getPillarIcon(pillar.iconName)}
+          {/* 2-Column Spotlight Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Column: Stage Photo (7 Cols) */}
+            <div className="lg:col-span-7 flex flex-col">
+              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border-delicate shadow-level-2 bg-surface-container-lowest group flex-1">
+                <Image
+                  src={profileData.bgImageUrl || "/assets/profile/pimnas-bg.jpeg"}
+                  alt="Kontingen PIMNAS POLBAN - Peraih Medali Perak dan Perunggu Tingkat Nasional"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 680px"
+                  className="object-cover object-[center_35%] group-hover:scale-102 transition-transform duration-700"
+                />
+
+                {/* Top Floating Badge */}
+                <div className="absolute top-3.5 left-3.5 px-3 py-1.5 rounded-lg bg-slate-950/80 text-white text-xs font-medium backdrop-blur-md border border-white/15 flex items-center gap-2 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                  <span>Panggung PIMNAS 36 • Kontingen POLBAN</span>
                 </div>
-                <div className="space-y-2.5">
-                  <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
-                    {pillar.title}
-                  </h3>
-                  <p className="font-body-sm text-body-sm text-secondary leading-relaxed">
-                    {pillar.description}
+
+                {/* Bottom Caption Overlay */}
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent text-white">
+                  <p className="font-headline-sm text-sm sm:text-base font-semibold leading-snug">
+                    Penganugerahan Medali Nasional di Universitas Hasanuddin
+                  </p>
+                  <p className="font-body-sm text-xs sm:text-sm text-slate-300 mt-0.5">
+                    Tim Rekayasa Perangkat Lunak Lawan PMO bersama jajaran kontingen POLBAN
                   </p>
                 </div>
-                <div className="pt-2 flex flex-wrap gap-2">
-                  {pillar.tags.map((tag, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Right Column: Achievements & Credentials (5 Cols) */}
+            <div className="lg:col-span-5 flex flex-col justify-between gap-4">
+              {/* Medal 1: Perak */}
+              <div className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 transition-all space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-8 h-8 rounded-lg bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-sm shadow-xs border border-slate-300">
+                      🥈
+                    </span>
+                    <span className="font-label-sm text-label-sm font-semibold uppercase text-secondary tracking-wider">
+                      Medali Perak (Juara 2)
+                    </span>
+                  </div>
+                  <span className="font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
+                    Poster PKM-KI
+                  </span>
+                </div>
+                <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Keunggulan Pemodelan Arsitektur Sistem
+                </h3>
+                <p className="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  Pengakuan dewan juri nasional atas kejelasan perancangan sistem, alur arsitektur perangkat lunak, serta visualisasi komprehensif solusi digital intervensi preventif.
+                </p>
+              </div>
+
+              {/* Medal 2: Perunggu */}
+              <div className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 transition-all space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm shadow-xs border border-amber-200">
+                      🥉
+                    </span>
+                    <span className="font-label-sm text-label-sm font-semibold uppercase text-secondary tracking-wider">
+                      Medali Perunggu (Juara 3)
+                    </span>
+                  </div>
+                  <span className="font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
+                    Presentasi PKM-KI
+                  </span>
+                </div>
+                <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Kesiapan Implementasi &amp; Uji Teknis
+                </h3>
+                <p className="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  Dianugerahi atas pembuktian teknis yang solid, kesiapan implementasi kode produksi, dan demonstrasi keandalan sistem di hadapan dewan penilai ahli nasional.
+                </p>
+              </div>
+
+              {/* HKI & Link Box */}
+              <div className="p-4 rounded-xl bg-surface-container border border-border-delicate flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <ShieldCheck className="w-5 h-5 text-primary shrink-0" />
+                  <div className="min-w-0">
+                    <p className="font-label-md text-label-md text-primary font-semibold truncate">
+                      Karya Terdaftar HKI Kemenkumham RI
+                    </p>
+                    <p className="text-[11px] text-secondary truncate">
+                      Lawan PMO • No: EC002025157155
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary-container shrink-0"
+                >
+                  <span>Lihat Dokumen</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
