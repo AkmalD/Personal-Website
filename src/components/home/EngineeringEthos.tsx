@@ -9,22 +9,35 @@ import {
   ArrowRight,
   Layers,
   Sparkles,
+  Eye,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ArchitectureModal } from "@/components/modals/ArchitectureModal";
+import { DocumentModal } from "@/components/modals/DocumentModal";
 import { profileData } from "@/data/profile";
 import { projectsData } from "@/data/projects";
-import { Project } from "@/types/portfolio";
+import { certificationsData } from "@/data/experience";
+import { Project, CertificationItem } from "@/types/portfolio";
 
 export function EngineeringEthos() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedDoc, setSelectedDoc] = useState<CertificationItem | null>(null);
+  const [isDocModalOpen, setIsDocModalOpen] = useState(false);
 
   const featuredProjects = projectsData.filter((p) => p.featured).slice(0, 3);
 
   const handleOpenArchitecture = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
+  };
+
+  const handleOpenDocById = (docId: string) => {
+    const doc = certificationsData.find((c) => c.id === docId);
+    if (doc) {
+      setSelectedDoc(doc);
+      setIsDocModalOpen(true);
+    }
   };
 
   return (
@@ -83,44 +96,54 @@ export function EngineeringEthos() {
             {/* Right Column: Achievements & Credentials (5 Cols) */}
             <div className="lg:col-span-5 flex flex-col justify-between gap-4">
               {/* Medal 1: Perak */}
-              <div className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 transition-all space-y-2.5">
+              <div
+                onClick={() => handleOpenDocById("award-pimnas-perak")}
+                className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:border-border-interactive transition-all space-y-2.5 cursor-pointer group"
+                title="Klik untuk melihat sertifikat resmi Medali Perak"
+              >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-lg bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-sm shadow-xs border border-slate-300">
+                    <span className="w-8 h-8 rounded-lg bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-sm shadow-xs border border-slate-300 group-hover:scale-105 transition-transform">
                       🥈
                     </span>
                     <span className="font-label-sm text-label-sm font-semibold uppercase text-secondary tracking-wider">
                       Medali Perak (Juara 2)
                     </span>
                   </div>
-                  <span className="font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
-                    Poster PKM-KI
-                  </span>
+                  <div className="flex items-center gap-1.5 font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded group-hover:text-primary transition-colors">
+                    <span>Poster PKM-KI</span>
+                    <Eye className="w-3 h-3 opacity-60 group-hover:opacity-100" />
+                  </div>
                 </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
-                  Keunggulan Pemodelan Arsitektur Sistem
+                <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
+                  Penyajian Solusi Komprehensif &amp; Desain Sistem
                 </h3>
                 <p className="font-body-sm text-body-sm text-secondary leading-relaxed">
-                  Pengakuan dewan juri nasional atas kejelasan perancangan sistem, alur arsitektur perangkat lunak, serta visualisasi komprehensif solusi digital intervensi preventif.
+                  Dianugerahi oleh dewan juri nasional atas keunggulan poster ilmiah yang menyajikan solusi secara lengkap dan tuntas—menjelaskan secara utuh analisis urgensi masalah, perancangan arsitektur sistem, formulasi metode preventif-interventif, hingga efektivitas solusi yang ditawarkan.
                 </p>
               </div>
 
               {/* Medal 2: Perunggu */}
-              <div className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 transition-all space-y-2.5">
+              <div
+                onClick={() => handleOpenDocById("award-pimnas-perunggu")}
+                className="p-5 rounded-2xl bg-surface-container-lowest border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:border-border-interactive transition-all space-y-2.5 cursor-pointer group"
+                title="Klik untuk melihat sertifikat resmi Medali Perunggu"
+              >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm shadow-xs border border-amber-200">
+                    <span className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm shadow-xs border border-amber-200 group-hover:scale-105 transition-transform">
                       🥉
                     </span>
                     <span className="font-label-sm text-label-sm font-semibold uppercase text-secondary tracking-wider">
                       Medali Perunggu (Juara 3)
                     </span>
                   </div>
-                  <span className="font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded">
-                    Presentasi PKM-KI
-                  </span>
+                  <div className="flex items-center gap-1.5 font-mono text-xs text-secondary bg-surface-container px-2 py-0.5 rounded group-hover:text-primary transition-colors">
+                    <span>Presentasi PKM-KI</span>
+                    <Eye className="w-3 h-3 opacity-60 group-hover:opacity-100" />
+                  </div>
                 </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
                   Kesiapan Implementasi &amp; Uji Teknis
                 </h3>
                 <p className="font-body-sm text-body-sm text-secondary leading-relaxed">
@@ -128,7 +151,7 @@ export function EngineeringEthos() {
                 </p>
               </div>
 
-              {/* HKI & Link Box */}
+              {/* HKI & Direct Modal Trigger */}
               <div className="p-4 rounded-xl bg-surface-container border border-border-delicate flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <ShieldCheck className="w-5 h-5 text-primary shrink-0" />
@@ -141,13 +164,14 @@ export function EngineeringEthos() {
                     </p>
                   </div>
                 </div>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary-container shrink-0"
+                <button
+                  type="button"
+                  onClick={() => handleOpenDocById("hki-lawan-pmo")}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-white hover:bg-primary-container transition-colors shadow-xs shrink-0 cursor-pointer"
                 >
-                  <span>Lihat Dokumen</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                  <Eye className="w-3.5 h-3.5 text-white" />
+                  <span className="text-white">Lihat Dokumen HKI</span>
+                </button>
               </div>
             </div>
           </div>
@@ -253,6 +277,13 @@ export function EngineeringEthos() {
         project={selectedProject}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+      />
+
+      {/* Interactive Document / HKI Modal Instance */}
+      <DocumentModal
+        item={selectedDoc}
+        isOpen={isDocModalOpen}
+        onClose={() => setIsDocModalOpen(false)}
       />
     </div>
   );
