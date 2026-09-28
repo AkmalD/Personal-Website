@@ -8,10 +8,8 @@ import {
   Code2,
   Cpu,
   ArrowRight,
-  ExternalLink,
   Layers,
   Sparkles,
-  GitBranch,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ArchitectureModal } from "@/components/modals/ArchitectureModal";
@@ -124,11 +122,20 @@ export function EngineeringEthos() {
             {featuredProjects.map((project) => (
               <article
                 key={project.id}
-                className="group bg-surface-container-lowest rounded-2xl border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:border-border-interactive transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                onClick={() => handleOpenArchitecture(project)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleOpenArchitecture(project);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                className="group bg-surface-container-lowest rounded-2xl border border-border-delicate shadow-level-1 hover:shadow-level-2 hover:border-primary/40 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary/20"
               >
-                <div>
-                  {/* Image Preview with overlay badges */}
-                  <div className="relative w-full aspect-video bg-surface-container overflow-hidden">
+                {/* Image Preview with overlay badges */}
+                <div className="relative w-full aspect-video bg-surface-container overflow-hidden">
+                  {project.coverImage ? (
                     <Image
                       src={project.coverImage}
                       alt={project.title}
@@ -136,102 +143,36 @@ export function EngineeringEthos() {
                       sizes="(max-width: 1024px) 100vw, 360px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                      <span className="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-[11px] font-semibold text-primary shadow-xs">
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary via-slate-800 to-slate-950 flex flex-col items-center justify-center p-6 text-center">
+                      <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-primary-fixed mb-2">
+                        <Layers className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-white/70">
                         {project.categoryLabel}
                       </span>
-                      {project.badge && (
-                        <span className="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-[11px] font-semibold text-accent-sage shadow-xs">
-                          {project.badge}
-                        </span>
-                      )}
                     </div>
-                  </div>
+                  )}
 
-                  {/* Body Content */}
-                  <div className="p-6 space-y-4">
-                    <div>
-                      <h3 className="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary transition-colors line-clamp-1">
-                        {project.title}
-                      </h3>
-                      <p className="font-body-sm text-body-sm text-secondary mt-1.5 line-clamp-2 leading-relaxed">
-                        {project.summary}
-                      </p>
-                    </div>
-
-                    {/* Challenge & Outcome Highlights */}
-                    <div className="p-3.5 rounded-xl bg-surface-container-low border border-border-delicate space-y-2 text-body-sm">
-                      <div>
-                        <span className="text-[11px] uppercase font-semibold text-secondary block">
-                          Tantangan
-                        </span>
-                        <p className="text-[13px] text-on-surface line-clamp-1 font-medium">
-                          {project.challenge}
-                        </p>
-                      </div>
-                      <div className="pt-1 border-t border-border-delicate/60">
-                        <span className="text-[11px] uppercase font-semibold text-emerald-700 block">
-                          Hasil / Metrik
-                        </span>
-                        <p className="text-[13px] text-on-surface line-clamp-1 font-medium">
-                          {project.outcome}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Tech Chips */}
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {project.techStack.slice(0, 4).map((tech, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="px-2 py-0.5 rounded-md bg-surface-container text-secondary text-[11px] font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.techStack.length > 4 && (
-                        <span className="px-2 py-0.5 rounded-md bg-surface-container-low text-secondary text-[11px]">
-                          +{project.techStack.length - 4}
-                        </span>
-                      )}
-                    </div>
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    <span className="px-2.5 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-md text-[11px] font-semibold text-primary shadow-xs border border-border-delicate/60">
+                      {project.categoryLabel}
+                    </span>
+                    {project.badge && (
+                      <span className="px-2.5 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-md text-[11px] font-semibold text-accent-sage shadow-xs border border-border-delicate/60">
+                        {project.badge}
+                      </span>
+                    )}
                   </div>
                 </div>
 
-                {/* Card Action Footer */}
-                <div className="p-6 pt-0 flex items-center justify-between gap-2 border-t border-border-delicate/50 pt-4 mt-2">
-                  <button
-                    type="button"
-                    onClick={() => handleOpenArchitecture(project)}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[38px] rounded-lg text-label-sm font-medium bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-xs cursor-pointer"
-                  >
-                    <Layers className="w-3.5 h-3.5" />
-                    <span>View Architecture</span>
-                  </button>
-
-                  <div className="flex items-center gap-2">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
-                        title="Live Demo"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
-                    {project.repoUrl && (
-                      <a
-                        href={project.repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 min-h-[38px] min-w-[38px] flex items-center justify-center rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
-                        title="GitHub Repository"
-                      >
-                        <GitBranch className="w-4 h-4" />
-                      </a>
-                    )}
+                {/* Body Content: Judul & Click Indicator */}
+                <div className="p-5 flex items-center justify-between gap-3">
+                  <h3 className="font-headline-sm text-[1.125rem] font-semibold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                    {project.title}
+                  </h3>
+                  <div className="w-8 h-8 rounded-full bg-surface-container-low group-hover:bg-primary group-hover:text-white text-secondary flex items-center justify-center shrink-0 transition-colors shadow-2xs">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </div>
               </article>

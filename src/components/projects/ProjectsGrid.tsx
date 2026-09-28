@@ -137,13 +137,24 @@ export function ProjectsGrid() {
                 <div>
                   {/* Visual Preview / Schematic Header */}
                   <div className="relative w-full h-56 bg-surface-container overflow-hidden border-b border-border-delicate">
-                    <Image
-                      src={project.coverImage}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 600px"
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
+                    {project.coverImage ? (
+                      <Image
+                        src={project.coverImage}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 600px"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary via-slate-800 to-slate-950 flex flex-col items-center justify-center p-6 text-center">
+                        <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white mb-2">
+                          <Layers className="w-6 h-6" />
+                        </div>
+                        <span className="font-mono text-[11px] uppercase tracking-wider text-white/70">
+                          Backend Microservices &amp; Architecture
+                        </span>
+                      </div>
+                    )}
 
                     {/* Gradient Overlay for Tag Readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent pointer-events-none" />

@@ -11,7 +11,7 @@ export const projectsData: Project[] = [
     categoryLabel: "Backend & Microservices",
     role: "Backend Engineer",
     year: "2024",
-    featured: true,
+    featured: false,
     badge: "Featured Architecture",
     keyMetric: {
       label: "Inter-Service Latency",
@@ -33,8 +33,8 @@ export const projectsData: Project[] = [
       "REST API",
       "DTO Pattern",
     ],
-    coverImage: "/assets/projects/clinic-system/clinic-1.png",
-    images: ["/assets/projects/clinic-system/clinic-1.png"],
+    coverImage: "",
+    images: [],
     architecture: {
       overview:
         "Client request diterima terpusat oleh Spring Cloud Gateway untuk routing aman, kemudian diteruskan ke Catalogue & Order service yang berkomunikasi secara stateless dengan PostgreSQL masing-masing.",
@@ -75,7 +75,7 @@ export const projectsData: Project[] = [
     categoryLabel: "Fullstack & Healthcare",
     role: "Fullstack Engineer",
     year: "2024",
-    featured: true,
+    featured: false,
     badge: "Healthcare System",
     keyMetric: {
       label: "Workflow Automation",
@@ -205,7 +205,7 @@ export const projectsData: Project[] = [
     categoryLabel: "Public Governance & Web App",
     role: "Frontend & Fullstack Engineer",
     year: "2024",
-    featured: false,
+    featured: true,
     badge: "Terdaftar HKI",
     keyMetric: {
       label: "Legalitas & Dampak",
@@ -264,7 +264,8 @@ export const projectsData: Project[] = [
     categoryLabel: "Enterprise Security & Web",
     role: "Backend & Database Designer",
     year: "2024",
-    featured: false,
+    featured: true,
+    badge: "Enterprise Security",
     keyMetric: {
       label: "Security Compliance",
       value: "Multi-Tier Approval Workflow",
