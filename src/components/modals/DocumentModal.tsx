@@ -105,7 +105,7 @@ export function DocumentModal({
                 rel="noopener noreferrer"
                 className="inline-flex"
               >
-                <Button variant="secondary" size="sm" className="hidden sm:inline-flex">
+                <Button variant="secondary" size="sm" className="inline-flex">
                   <span>Tab Baru</span>
                   <ExternalLink className="w-3.5 h-3.5 ml-1" />
                 </Button>
