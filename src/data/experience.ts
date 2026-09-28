@@ -104,7 +104,7 @@ export const certificationsData: CertificationItem[] = [
     date: "17 Oktober 2025",
     type: "patent_hki",
     registrationNumber: "EC002025157155 / EC002026167019",
-    fileUrl: "/assets/certificates/SuratCiptaan_EC002026167019.pdf",
+    fileUrl: "/assets/certificates/surat-ciptaan-lawan-pmo.pdf",
     description:
       "Surat Pencatatan Hak Kekayaan Intelektual (HKI) resmi atas ciptaan perangkat lunak ekosistem mobile self-regulation Lawan PMO.",
   },
@@ -115,7 +115,7 @@ export const certificationsData: CertificationItem[] = [
     date: "4 Agustus 2025",
     type: "patent_hki",
     registrationNumber: "EC002025104608",
-    fileUrl: "/assets/certificates/Hak Cipta Dasawisma Sariwangi.pdf",
+    fileUrl: "/assets/certificates/hak-cipta-dasawisma-sariwangi.pdf",
     description:
       "Surat Pencatatan Hak Kekayaan Intelektual (HKI) resmi atas sistem dashboard data kependudukan perdesaan Desa Sariwangi.",
   },
@@ -125,7 +125,7 @@ export const certificationsData: CertificationItem[] = [
     issuer: "Pekan Ilmiah Mahasiswa Nasional (PIMNAS)",
     date: "2025",
     type: "award",
-    fileUrl: "/assets/certificates/Sertifikat Penghargaan Perak - Poster.pdf",
+    fileUrl: "/assets/certificates/sertifikat-penghargaan-perak-poster.pdf",
     description:
       "Penghargaan kompetisi ilmiah bergengsi tingkat nasional atas riset dan inovasi rekayasa perangkat lunak platform kesehatan digital.",
   },
@@ -135,7 +135,7 @@ export const certificationsData: CertificationItem[] = [
     issuer: "Pekan Ilmiah Mahasiswa Nasional (PIMNAS)",
     date: "2025",
     type: "award",
-    fileUrl: "/assets/certificates/Sertifikat Penghargaan Perunggu - Presentasi.pdf",
+    fileUrl: "/assets/certificates/sertifikat-penghargaan-perunggu-presentasi.pdf",
     description:
       "Penghargaan presentasi teknis dan demonstrasi efektivitas produk rekayasa perangkat lunak di hadapan dewan juri nasional.",
   },
@@ -156,7 +156,7 @@ export const certificationsData: CertificationItem[] = [
     issuer: "Jurusan Teknik Komputer dan Informatika, POLBAN",
     date: "2024",
     type: "certification",
-    fileUrl: "/assets/certificates/Sertif Lead Developer.jpeg",
+    fileUrl: "/assets/certificates/sertifikat-lead-developer.jpeg",
     description:
       "Sertifikat apresiasi kepemimpinan teknis dalam memimpin tim rekayasa perangkat lunak pengabdian masyarakat.",
   },
