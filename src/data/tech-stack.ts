@@ -11,6 +11,7 @@ export const techStackData: SkillCategory[] = [
       { name: "Java", focusArea: "Spring Boot & OOP", category: "backend", icon: "Coffee" },
       { name: "Spring Boot", focusArea: "Microservices & Cloud", category: "backend", icon: "Layers" },
       { name: "Spring Cloud Gateway", focusArea: "API Gateway & Routing", category: "backend", icon: "Network" },
+      { name: "NestJS", focusArea: "Enterprise TypeScript Backend", category: "backend", icon: "Server" },
       { name: "Node.js", focusArea: "Asynchronous I/O", category: "backend", icon: "Server" },
       { name: "Express.js", focusArea: "REST APIs & Middleware", category: "backend", icon: "Cpu" },
       { name: "TypeScript", focusArea: "Strict Typing & Contracts", category: "backend", icon: "Code2" },
@@ -29,6 +30,7 @@ export const techStackData: SkillCategory[] = [
       { name: "Prisma ORM", focusArea: "Type-Safe Client & Migrations", category: "database", icon: "Workflow" },
       { name: "Spring Data JPA", focusArea: "Hibernate & Entity Graph", category: "database", icon: "Boxes" },
       { name: "Redis", focusArea: "In-Memory Caching", category: "database", icon: "Zap" },
+      { name: "SQL & Query Tuning", focusArea: "Complex Joins & DDL/DML", category: "database", icon: "Database" },
     ],
   },
   {
@@ -41,6 +43,7 @@ export const techStackData: SkillCategory[] = [
       { name: "Next.js 15", focusArea: "App Router & Static Export", category: "frontend", icon: "Globe" },
       { name: "React 19", focusArea: "Component Architecture", category: "frontend", icon: "Layout" },
       { name: "Tailwind CSS", focusArea: "Design Tokens & Utility UI", category: "frontend", icon: "Palette" },
+      { name: "JavaScript (ES6+)", focusArea: "Modern Syntax & Web APIs", category: "frontend", icon: "Code2" },
       { name: "Material UI", focusArea: "Enterprise UI Components", category: "frontend", icon: "Component" },
       { name: "Vite", focusArea: "Fast Bundling & HMR", category: "frontend", icon: "FastForward" },
     ],
@@ -72,6 +75,7 @@ export const techStackData: SkillCategory[] = [
       { name: "DTO Pattern", focusArea: "Entity Encapsulation", category: "architecture", icon: "Shield" },
       { name: "RBAC", focusArea: "Role-Based Access Control", category: "architecture", icon: "Lock" },
       { name: "SOLID Principles", focusArea: "Clean & Maintainable Code", category: "architecture", icon: "Award" },
+      { name: "Clean Architecture", focusArea: "Separation of Concerns", category: "architecture", icon: "Layers" },
     ],
   },
 ];
