@@ -12,7 +12,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://akmal-portfolio.pages.dev";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://akmal-portofolio.pages.dev";
 
 export const viewport: Viewport = {
   themeColor: "#1d2b3e",

@@ -39,5 +39,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          preCommands: npx wrangler pages project create akmal-portfolio --production-branch=main || true
-          command: pages deploy out --project-name=akmal-portfolio --commit-dirty=true
+          preCommands: npx wrangler pages project create akmal-portofolio --production-branch=main || true
+          command: pages deploy out --project-name=akmal-portofolio --commit-dirty=true

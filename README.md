@@ -2,7 +2,7 @@
 
 > Production-grade personal portfolio website showcasing Fullstack & Backend Engineering expertise (Spring Boot, Next.js, PostgreSQL, Microservices, and Cloud Native architectures).
 
-Live URL: [https://akmal-portfolio.pages.dev](https://akmal-portfolio.pages.dev)
+Live URL: [https://akmal-portofolio.pages.dev](https://akmal-portofolio.pages.dev)
 
 ---
 
