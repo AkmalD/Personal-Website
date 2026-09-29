@@ -92,7 +92,7 @@ export function TechStackBento() {
   const filterTabs = [
     { id: "all", label: "Semua Kategori", count: techStackData.length },
     { id: "backend", label: "Backend & Core", count: techStackData.find((c) => c.id === "backend")?.skills.length || 0 },
-    { id: "database", label: "Databases & Cache", count: techStackData.find((c) => c.id === "database")?.skills.length || 0 },
+    { id: "database", label: "Databases & Storage", count: techStackData.find((c) => c.id === "database")?.skills.length || 0 },
     { id: "frontend", label: "Frontend & UI", count: techStackData.find((c) => c.id === "frontend")?.skills.length || 0 },
     { id: "devops_tools", label: "DevOps & Tools", count: techStackData.find((c) => c.id === "devops_tools")?.skills.length || 0 },
     { id: "architecture", label: "Architecture", count: techStackData.find((c) => c.id === "architecture")?.skills.length || 0 },
