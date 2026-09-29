@@ -27,6 +27,8 @@ import {
   Shield,
   Lock,
   Award,
+  Flame,
+  Leaf,
 } from "lucide-react";
 
 interface TechIconProps {
@@ -90,6 +92,10 @@ export function TechIcon({ name, className = "w-4 h-4 text-primary" }: TechIconP
       return <Lock className={className} />;
     case "Award":
       return <Award className={className} />;
+    case "Flame":
+      return <Flame className={className} />;
+    case "Leaf":
+      return <Leaf className={className} />;
     default:
       return <Code2 className={className} />;
   }

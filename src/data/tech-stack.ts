@@ -27,6 +27,8 @@ export const techStackData: SkillCategory[] = [
     skills: [
       { name: "PostgreSQL", focusArea: "ACID RDBMS & Indexing", category: "database", icon: "Database" },
       { name: "MySQL", focusArea: "Relational Schema 3NF", category: "database", icon: "Database" },
+      { name: "MongoDB", focusArea: "Document NoSQL Database", category: "database", icon: "Leaf" },
+      { name: "Firebase", focusArea: "Cloud Firestore & BaaS", category: "database", icon: "Flame" },
       { name: "Prisma ORM", focusArea: "Type-Safe Client & Migrations", category: "database", icon: "Workflow" },
       { name: "Spring Data JPA", focusArea: "Hibernate & Entity Graph", category: "database", icon: "Boxes" },
     ],
