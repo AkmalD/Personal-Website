@@ -141,121 +141,94 @@ export function TechStackBento() {
   return (
     <section className="w-full py-12 lg:py-20 bg-surface-container-lowest border-b border-border-delicate">
       <Container>
-        {/* Controls Bar: Search & Category Filter Slider */}
-        <div className="space-y-4 mb-10">
-          {/* Top Row: Label & Search Input */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <span className="font-label-sm text-secondary uppercase tracking-wider font-semibold">
-                Kategori Teknologi
-              </span>
-              <span className="text-secondary/40 text-xs">•</span>
-              <span className="text-xs text-secondary font-mono">
-                {filterTabs.length} Kategori Tersedia
-              </span>
-            </div>
+        {/* Controls Bar: Filter Tabs Slider & Search Input in ONE row */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+          {/* Category Tabs with Slidebar */}
+          <div className="relative min-w-0 flex-1 flex items-center gap-1.5">
+            {/* Left Chevron Button */}
+            <button
+              type="button"
+              onClick={() => handleScroll("left")}
+              disabled={!canScrollLeft}
+              aria-label="Geser kategori ke kiri"
+              className={cn(
+                "w-8 h-8 rounded-full bg-surface-container-low border border-border-delicate flex items-center justify-center shrink-0 transition-all text-secondary hover:text-on-surface hover:bg-surface-container shadow-2xs cursor-pointer",
+                !canScrollLeft ? "opacity-25 pointer-events-none cursor-default" : "opacity-100"
+              )}
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
 
-            {/* Quick Search Input */}
-            <div className="relative w-full sm:w-80">
-              <Search className="w-4 h-4 text-secondary absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-              <input
-                type="text"
-                placeholder="Cari tool, teknologi, fokus area..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface border border-border-delicate text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-secondary/60 transition-all shadow-2xs"
-              />
-            </div>
-          </div>
-
-          {/* Dedicated Category Slider Card */}
-          <div className="bg-surface-container-low/40 p-2.5 sm:p-3 rounded-2xl border border-border-delicate">
-            <div className="flex items-center gap-2">
-              {/* Left Chevron Button */}
-              <button
-                type="button"
-                onClick={() => handleScroll("left")}
-                disabled={!canScrollLeft}
-                aria-label="Geser kategori ke kiri"
-                className={cn(
-                  "w-9 h-9 rounded-xl bg-surface-container border border-border-delicate flex items-center justify-center shrink-0 transition-all text-secondary hover:text-on-surface hover:bg-surface-container-high shadow-2xs cursor-pointer",
-                  !canScrollLeft ? "opacity-35 pointer-events-none cursor-default" : "opacity-100"
-                )}
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-
-              {/* Scrollable Tabs */}
-              <div
-                ref={tabsRef}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUpOrLeave}
-                onMouseLeave={handleMouseUpOrLeave}
-                onWheel={handleWheel}
-                onScroll={checkScroll}
-                className={cn(
-                  "flex items-center gap-2 overflow-x-auto scroll-smooth py-1 px-1 no-scrollbar select-none min-w-0 flex-1 cursor-grab",
-                  isDragging && "cursor-grabbing"
-                )}
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
-                {filterTabs.map((tab) => {
-                  const isActive = activeFilter === tab.id;
-                  return (
-                    <button
-                      key={tab.id}
-                      onClick={() => {
-                        if (!isMoved.current) {
-                          setActiveFilter(tab.id);
-                        }
-                      }}
-                      className={`px-4 py-2 rounded-xl text-label-md font-medium transition-all duration-200 cursor-pointer shrink-0 flex items-center gap-2 ${
+            {/* Scrollable Tabs with visible Slidebar */}
+            <div
+              ref={tabsRef}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUpOrLeave}
+              onMouseLeave={handleMouseUpOrLeave}
+              onWheel={handleWheel}
+              onScroll={checkScroll}
+              className={cn(
+                "flex items-center gap-2 overflow-x-auto scroll-smooth pb-2.5 pt-0.5 px-0.5 select-none min-w-0 flex-1 cursor-grab custom-slidebar",
+                isDragging && "cursor-grabbing"
+              )}
+            >
+              {filterTabs.map((tab) => {
+                const isActive = activeFilter === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => {
+                      if (!isMoved.current) {
+                        setActiveFilter(tab.id);
+                      }
+                    }}
+                    className={`px-4 py-2 rounded-xl text-label-md font-medium transition-all duration-200 cursor-pointer shrink-0 flex items-center gap-2 ${
+                      isActive
+                        ? "bg-primary text-on-primary shadow-xs"
+                        : "bg-surface-container-low text-secondary border border-border-delicate hover:bg-surface-container hover:text-on-surface"
+                    }`}
+                  >
+                    <span>{tab.label}</span>
+                    <span
+                      className={`text-[11px] px-2 py-0.5 rounded-full font-mono font-semibold ${
                         isActive
-                          ? "bg-primary text-on-primary shadow-xs"
-                          : "bg-surface-container-lowest text-secondary border border-border-delicate hover:bg-surface-container hover:text-on-surface"
+                          ? "bg-white/20 text-white"
+                          : "bg-surface-container text-secondary"
                       }`}
                     >
-                      <span>{tab.label}</span>
-                      <span
-                        className={`text-[11px] px-2 py-0.5 rounded-full font-mono font-semibold ${
-                          isActive
-                            ? "bg-white/20 text-white"
-                            : "bg-surface-container text-secondary"
-                        }`}
-                      >
-                        {tab.count}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Right Chevron Button */}
-              <button
-                type="button"
-                onClick={() => handleScroll("right")}
-                disabled={!canScrollRight}
-                aria-label="Geser kategori ke kanan"
-                className={cn(
-                  "w-9 h-9 rounded-xl bg-surface-container border border-border-delicate flex items-center justify-center shrink-0 transition-all text-secondary hover:text-on-surface hover:bg-surface-container-high shadow-2xs cursor-pointer",
-                  !canScrollRight ? "opacity-35 pointer-events-none cursor-default" : "opacity-100"
-                )}
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
+                      {tab.count}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Visual Slider Track Indicator */}
-            <div className="mt-2.5 mx-auto max-w-xs h-1.5 bg-surface-container rounded-full overflow-hidden relative">
-              <div
-                className="h-full bg-primary rounded-full transition-all duration-100 ease-out"
-                style={{
-                  width: "35%",
-                  marginLeft: `${scrollProgress * 0.65}%`,
-                }}
-              />
-            </div>
+            {/* Right Chevron Button */}
+            <button
+              type="button"
+              onClick={() => handleScroll("right")}
+              disabled={!canScrollRight}
+              aria-label="Geser kategori ke kanan"
+              className={cn(
+                "w-8 h-8 rounded-full bg-surface-container-low border border-border-delicate flex items-center justify-center shrink-0 transition-all text-secondary hover:text-on-surface hover:bg-surface-container shadow-2xs cursor-pointer",
+                !canScrollRight ? "opacity-25 pointer-events-none cursor-default" : "opacity-100"
+              )}
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Quick Search Input */}
+          <div className="relative w-full md:w-64 lg:w-72 shrink-0">
+            <Search className="w-4 h-4 text-secondary absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <input
+              type="text"
+              placeholder="Cari tool, teknologi..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-surface-container-low text-on-surface border border-border-delicate text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-secondary/60 transition-all"
+            />
           </div>
         </div>
 
@@ -280,7 +253,7 @@ export function TechStackBento() {
             {filteredCategories.map((category) => (
               <div
                 key={category.id}
-                className="bg-surface-container-lowest rounded-2xl border border-border-delicate shadow-level-1 hover:border-primary/25 hover:shadow-level-2 transition-all duration-300 p-6 md:p-8 flex flex-col justify-between"
+                className="bg-surface-container-lowest rounded-2xl border border-border-delicate shadow-level-1 hover:border-primary/25 hover:shadow-level-2 transition-all duration-300 p-6 md:p-8 flex flex-col"
               >
                 <div>
                   {/* Category Header */}
@@ -310,33 +283,25 @@ export function TechStackBento() {
                 </div>
 
                 {/* Skills Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-                  {category.skills.map((skill, sIdx) => {
-                    const isLastOdd =
-                      category.skills.length % 2 === 1 &&
-                      sIdx === category.skills.length - 1;
-                    return (
-                      <div
-                        key={sIdx}
-                        className={cn(
-                          "group p-3 rounded-xl bg-surface-container-low/60 hover:bg-surface-container border border-border-delicate/70 transition-all duration-200 flex items-center gap-3 cursor-default",
-                          isLastOdd && "sm:col-span-2"
-                        )}
-                      >
-                        <div className="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
-                          <TechIcon name={skill.icon} className="w-4 h-4 text-primary" />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">
-                            {skill.name}
-                          </p>
-                          <p className="font-mono text-[11px] text-secondary truncate">
-                            {skill.focusArea}
-                          </p>
-                        </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {category.skills.map((skill, sIdx) => (
+                    <div
+                      key={sIdx}
+                      className="group p-3 rounded-xl bg-surface-container-low/60 hover:bg-surface-container border border-border-delicate/70 transition-all duration-200 flex items-center gap-3 cursor-default"
+                    >
+                      <div className="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
+                        <TechIcon name={skill.icon} className="w-4 h-4 text-primary" />
                       </div>
-                    );
-                  })}
+                      <div className="min-w-0">
+                        <p className="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">
+                          {skill.name}
+                        </p>
+                        <p className="font-mono text-[11px] text-secondary truncate">
+                          {skill.focusArea}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}

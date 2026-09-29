@@ -30,7 +30,6 @@ export const techStackData: SkillCategory[] = [
       { name: "Prisma ORM", focusArea: "Type-Safe Client & Migrations", category: "database", icon: "Workflow" },
       { name: "Spring Data JPA", focusArea: "Hibernate & Entity Graph", category: "database", icon: "Boxes" },
       { name: "Redis", focusArea: "In-Memory Caching", category: "database", icon: "Zap" },
-      { name: "SQL & Query Optimization", focusArea: "DDL, DML & Schema Indexing", category: "database", icon: "Database" },
     ],
   },
   {

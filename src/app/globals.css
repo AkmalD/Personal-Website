@@ -187,3 +187,28 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Sleek visible horizontal slidebar / scrollbar */
+.custom-slidebar::-webkit-scrollbar {
+  height: 5px;
+}
+
+.custom-slidebar::-webkit-scrollbar-track {
+  background: #eff4ff;
+  border-radius: 9999px;
+}
+
+.custom-slidebar::-webkit-scrollbar-thumb {
+  background: #9eadc5;
+  border-radius: 9999px;
+}
+
+.custom-slidebar::-webkit-scrollbar-thumb:hover {
+  background: #515f74;
+}
+
+.custom-slidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #9eadc5 #eff4ff;
+}
+
