@@ -36,12 +36,11 @@ export const techStackData: SkillCategory[] = [
     categoryName: "Frontend & UI Systems",
     subtitle: "Client Craft & Performance",
     description:
-      "Pengembangan antarmuka web modern yang responsif, berkecepatan tinggi (Lighthouse 95+), aksesibel, dan menyajikan data tabular kompleks secara tenang.",
+      "Pengembangan antarmuka web modern yang responsif, berkecepatan tinggi (Lighthouse 95+), aksesibel, dan menyajikan data interaktif secara optimal.",
     skills: [
       { name: "Next.js 15", focusArea: "App Router & Static Export", category: "frontend", icon: "Globe" },
       { name: "React 19", focusArea: "Component Architecture", category: "frontend", icon: "Layout" },
       { name: "Tailwind CSS", focusArea: "Design Tokens & Utility UI", category: "frontend", icon: "Palette" },
-      { name: "TanStack Table", focusArea: "Large Dataset Virtualization", category: "frontend", icon: "Table" },
       { name: "Material UI", focusArea: "Enterprise UI Components", category: "frontend", icon: "Component" },
       { name: "Vite", focusArea: "Fast Bundling & HMR", category: "frontend", icon: "FastForward" },
     ],

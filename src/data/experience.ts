@@ -25,6 +25,7 @@ export const experienceData: ExperienceItem[] = [
   {
     id: "lawan-pmo-backend",
     role: "Backend Developer",
+    badge: "Production System",
     organization: "Lawan PMO — Digital Self-Regulation Ecosystem",
     period: "2025 – Sekarang",
     location: "Bandung, Indonesia",
@@ -40,7 +41,8 @@ export const experienceData: ExperienceItem[] = [
   },
   {
     id: "pindad-fullstack",
-    role: "Pengembang Fullstack (Praktik Kerja Lapangan)",
+    role: "Fullstack Developer",
+    badge: "Praktik Kerja Lapangan",
     organization: "PT Pindad (Persero) — Divisi Teknologi Informasi",
     period: "Jun – Okt 2025",
     location: "Bandung, Indonesia",
@@ -55,22 +57,24 @@ export const experienceData: ExperienceItem[] = [
   },
   {
     id: "dasawisma-fullstack",
-    role: "Fullstack Developer (Program Pengabdian kepada Masyarakat)",
+    role: "Fullstack Developer",
+    badge: "Pengabdian kepada Masyarakat",
     organization: "Desa Sariwangi — Sistem Manajemen Dasawisma",
     period: "2025",
     location: "Bandung Barat, Indonesia",
     description:
       "Mengembangkan dashboard administrasi kependudukan terpadu untuk digitalisasi rekapitulasi data keluarga warga Desa Sariwangi.",
     responsibilities: [
-      "Membangun dashboard performa tinggi berbasis Next.js 15, React 19, dan TanStack Table.",
+      "Membangun dashboard performa tinggi berbasis Next.js 15, React 19, dan Tailwind CSS.",
       "Mengimplementasikan fitur ekspor dokumen otomatis ke format PDF resmi pemerintah dan spreadsheet Excel.",
       "Meraih Surat Pencatatan Hak Cipta Perangkat Lunak Nasional dari Kemenkumham RI.",
     ],
-    technologies: ["Next.js", "React 19", "TanStack Table", "Tailwind CSS", "PDF Generation"],
+    technologies: ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "PDF Generation"],
   },
   {
     id: "smkn1-lead-dev",
-    role: "Lead Technical Developer (Program Pengabdian kepada Masyarakat)",
+    role: "Lead Technical Developer",
+    badge: "Pengabdian kepada Masyarakat",
     organization: "SMKN 1 Cisarua Lembang — Portal Web & CMS Institusi",
     period: "2024",
     location: "Lembang, Bandung Barat",

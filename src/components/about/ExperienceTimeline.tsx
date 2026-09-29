@@ -9,21 +9,6 @@ import { Badge } from "@/components/ui/Badge";
 import { experienceData } from "@/data/experience";
 
 export function ExperienceTimeline() {
-  const getExperienceBadge = (id: string) => {
-    switch (id) {
-      case "smkn1-lead-dev":
-        return <Badge variant="primary">Technical Lead</Badge>;
-      case "lawan-pmo-backend":
-        return <Badge variant="secondary">Production System</Badge>;
-      case "pindad-fullstack":
-        return <Badge variant="secondary">Industry PKL</Badge>;
-      case "dasawisma-fullstack":
-        return <Badge variant="secondary">Public Sector PkM</Badge>;
-      default:
-        return null;
-    }
-  };
-
   return (
     <section className="w-full py-16 lg:py-24 bg-surface-container-lowest border-b border-border-delicate">
       <Container>
@@ -56,7 +41,14 @@ export function ExperienceTimeline() {
                     <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
                       {exp.role}
                     </h3>
-                    {getExperienceBadge(exp.id)}
+                    {exp.badge && (
+                      <Badge
+                        variant={exp.badgeVariant || "secondary"}
+                        className="shrink-0"
+                      >
+                        {exp.badge}
+                      </Badge>
+                    )}
                   </div>
                   <div className="flex items-center gap-2 text-secondary font-body-sm text-body-sm">
                     <span className="text-primary font-medium">{exp.organization}</span>

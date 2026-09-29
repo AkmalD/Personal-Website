@@ -204,7 +204,7 @@ export const projectsData: Project[] = [
     title: "Dasawisma Sariwangi — Sistem Informasi Kependudukan",
     slug: "dasawisma-sariwangi",
     summary:
-      "Aplikasi dashboard pendataan kependudukan terpadu tingkat rukun warga di Desa Sariwangi berbasis Next.js 15, React 19, dan TanStack Table berkinerja tinggi.",
+      "Aplikasi dashboard pendataan kependudukan terpadu tingkat rukun warga di Desa Sariwangi berbasis Next.js 15, React 19, dan Tailwind CSS berkinerja tinggi.",
     category: "public_sector",
     categoryLabel: "Public Governance & Web App",
     role: "Frontend & Fullstack Engineer",
@@ -218,7 +218,7 @@ export const projectsData: Project[] = [
     challenge:
       "Proses rekapitulasi manual dokumen PKK Dasawisma kertas yang lambat, rentan duplikasi data keluarga, dan sulit dicetak sesuai format dinas.",
     solution:
-      "Membangun antarmuka data tabular berperforma tinggi dengan TanStack Table, filter multi-kolom, pencarian instan, serta generator ekspor dokumen PDF & Excel otomatis.",
+      "Membangun antarmuka data tabular berperforma tinggi dengan filter multi-kolom, pencarian instan, serta generator ekspor dokumen PDF & Excel otomatis.",
     outcome:
       "Terdaftar Hak Cipta Kemenkumham RI, memangkas waktu input data warga hingga 80%, dan eliminasi salah hitung data agregat kependudukan.",
     techStack: [
@@ -226,7 +226,6 @@ export const projectsData: Project[] = [
       "React 19",
       "TypeScript",
       "Tailwind CSS",
-      "TanStack Table",
       "PDF Export",
     ],
     coverImage: "/assets/projects/dasawisma/dasawisma-1.png",
@@ -237,13 +236,13 @@ export const projectsData: Project[] = [
     ],
     architecture: {
       overview:
-        "Arsitektur client-side virtualized table berbasis Next.js yang mampu me-render ribuan baris data keluarga tanpa frame drop.",
+        "Arsitektur dashboard data modern berbasis Next.js yang mampu me-render data keluarga kependudukan secara cepat dan responsif.",
       components: [
         {
           title: "Tabular Processing Engine",
           description:
-            "Virtual rendering dan agregasi formula statistik kependudukan real-time.",
-          tech: "TanStack Table",
+            "Pengolahan data tabular dan agregasi formula statistik kependudukan real-time.",
+          tech: "React State Engine",
         },
         {
           title: "Reporting Subsystem",

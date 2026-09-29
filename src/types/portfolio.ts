@@ -68,6 +68,8 @@ export interface ExperienceItem {
   organization: string;
   period: string;
   location: string;
+  badge?: string;
+  badgeVariant?: "default" | "primary" | "secondary" | "sage" | "outline";
   description: string;
   responsibilities: string[];
   technologies: string[];
